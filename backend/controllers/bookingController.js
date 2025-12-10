@@ -8,7 +8,7 @@ exports.registerForEvent = async (req, res) => {
       return res.status(400).json({ error: 'userId and eventId required' });
     }
 
-    // Check if user is already registered
+    // Check  registered
     const existingBooking = await Booking.findOne({
       where: { userId, eventId },
     });

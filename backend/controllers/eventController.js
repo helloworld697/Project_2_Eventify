@@ -62,7 +62,7 @@ exports.deleteEvent = async (req, res) => {
       return res.status(404).json({ error: 'Event not found' });
     }
     
-    // Verify ownership - only creator can delete
+    // owner verification
     const userId = req.body.userId;
     if (event.createdBy !== userId) {
       return res.status(403).json({ error: 'You can only delete events you created' });

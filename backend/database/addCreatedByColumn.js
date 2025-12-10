@@ -5,7 +5,7 @@ const addCreatedByColumn = async () => {
     await sequelize.authenticate();
     console.log('✓ Database connected');
 
-    // Add createdBy column if it doesn't exist
+    // this Adds createdBy column if it doesn't exist
     await sequelize.query(`
       ALTER TABLE events ADD COLUMN createdBy INT AFTER image_url;
     `).catch(err => {

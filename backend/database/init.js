@@ -3,13 +3,13 @@ require('dotenv').config();
 
 /**
  * Initialize database and create tables
- * Run this once to set up the database from scratch
+ * Run this to set up the database from start
  */
 async function initializeDatabase() {
   let connection;
 
   try {
-    // Connect to MySQL without selecting a database
+    
     connection = await mysql.createConnection({
       host: process.env.DB_HOST || 'localhost',
       user: process.env.DB_USER || 'root',
@@ -37,7 +37,7 @@ async function initializeDatabase() {
     await connection.query(`USE ${process.env.DB_NAME || 'eventify_db'}`);
     console.log(`✓ Connected to database '${process.env.DB_NAME || 'eventify_db'}'`);
 
-    // Create tables
+    //  tables
     const createUsersTable = `
       CREATE TABLE IF NOT EXISTS users (
         id INT PRIMARY KEY AUTO_INCREMENT,

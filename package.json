@@ -1,0 +1,12 @@
+{
+  "name": "eventify-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"npm --prefix backend run dev\" \"npm --prefix eventify run dev\"",
+    "install:all": "npm --prefix backend install && npm --prefix eventify install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
